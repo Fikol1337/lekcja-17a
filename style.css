@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.road-sign {
+    text-align: center;
+    margin: 20px;
+    position: relative;
+    width: 200px; /* szerokość znaku */
+    height: 200px; /* wysokość znaku */
+}
+
+.road-sign p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.warning::before,
+.information::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 100px solid transparent; /* wielkość trójkąta */
+}
+
+.warning::after,
+.information::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px; /* szerokość pionowego paska */
+    height: 100px; /* wysokość pionowego paska */
+    background-color: #000; /* kolor paska */
+}
+
+.warning::before {
+    border-bottom-color: #FFD700; /* kolor trójkąta ostrzegawczego */
+    border-bottom-width: 120px; /* wielkość trójkąta ostrzegawczego */
+}
+
+.information::before {
+    border-top-color: #6495ED; /* kolor trójkąta informacyjnego */
+    border-top-width: 120px; /* wielkość trójkąta informacyjnego */
+}
+
+.information::after {
+    background-color: #6495ED; /* kolor pionowego paska */
+}
